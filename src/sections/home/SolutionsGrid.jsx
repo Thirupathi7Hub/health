@@ -66,6 +66,30 @@ export default function SolutionsGrid() {
     }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.05
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, x: -30 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: 'spring',
+        stiffness: 90,
+        damping: 14
+      }
+    }
+  };
+
   return (
     <section className="py-20 bg-[#F8FAFC] relative overflow-hidden bg-grid-pattern text-left">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -87,22 +111,29 @@ export default function SolutionsGrid() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Left Column: Solutions List with 3D Tilt */}
-          <div className="lg:col-span-6 space-y-5 text-left">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-80px' }}
+            className="lg:col-span-6 space-y-5 text-left"
+          >
             {solutions.map((sol, index) => {
               const Icon = sol.icon;
               return (
-                <TiltCard
-                  key={index}
-                  className="flex gap-5 p-6 rounded-2xl bg-white border border-[#DCFCE7] shadow-premium hover:shadow-premium-hover transition-all duration-300"
-                >
-                  <div style={{ transform: 'translateZ(20px)' }} className="flex-shrink-0 w-12 h-12 rounded-xl bg-[#F0FDF4] text-primary border border-[#DCFCE7] flex items-center justify-center">
-                    <Icon size={24} />
-                  </div>
-                  <div style={{ transform: 'translateZ(10px)' }} className="space-y-1">
-                    <h3 className="text-base font-bold text-[#0F172A]">{sol.title}</h3>
-                    <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">{sol.description}</p>
-                  </div>
-                </TiltCard>
+                <motion.div key={index} variants={cardVariants}>
+                  <TiltCard
+                    className="flex gap-5 p-6 rounded-2xl bg-white border border-[#DCFCE7] shadow-premium hover:shadow-premium-hover transition-all duration-300"
+                  >
+                    <div style={{ transform: 'translateZ(20px)' }} className="flex-shrink-0 w-12 h-12 rounded-xl bg-[#F0FDF4] text-primary border border-[#DCFCE7] flex items-center justify-center">
+                      <Icon size={24} />
+                    </div>
+                    <div style={{ transform: 'translateZ(10px)' }} className="space-y-1">
+                      <h3 className="text-base font-bold text-[#0F172A]">{sol.title}</h3>
+                      <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">{sol.description}</p>
+                    </div>
+                  </TiltCard>
+                </motion.div>
               );
             })}
 
@@ -114,7 +145,7 @@ export default function SolutionsGrid() {
                 Request Infrastructure Consultation
               </button>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Column: Architectural Solution Mockup */}
           <div className="lg:col-span-6 relative">

@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Calendar, User, ArrowRight } from 'lucide-react';
 
 export default function InsightsFeed() {
@@ -33,6 +34,30 @@ export default function InsightsFeed() {
     }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.05
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: 'spring',
+        stiffness: 90,
+        damping: 14
+      }
+    }
+  };
+
   return (
     <section className="py-20 bg-[#F8FAFC] border-t border-[#DCFCE7] relative bg-grid-pattern text-left">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,15 +73,22 @@ export default function InsightsFeed() {
         </div>
 
         {/* Posts Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-80px' }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+        >
           {posts.map((post) => (
-            <article
+            <motion.article
               key={post.id}
-              className="group flex flex-col justify-between rounded-3xl bg-white border border-[#DCFCE7] overflow-hidden shadow-premium hover:shadow-premium-hover transition-all duration-305 text-left"
+              variants={cardVariants}
+              className="group flex flex-col justify-between rounded-3xl bg-white border border-[#DCFCE7] overflow-hidden shadow-premium hover:shadow-premium-hover transition-all duration-305 text-left h-full"
             >
               <div>
                 {/* Post Cover */}
-                <div className="relative h-48 overflow-hidden bg-slate-100">
+                <div className="relative h-48 overflow-hidden bg-slate-105">
                   <img
                     src={post.image}
                     alt={post.title}
@@ -93,9 +125,9 @@ export default function InsightsFeed() {
                   <ArrowRight size={12} />
                 </span>
               </div>
-            </article>
+            </motion.article>
           ))}
-        </div>
+        </motion.div>
 
       </div>
     </section>

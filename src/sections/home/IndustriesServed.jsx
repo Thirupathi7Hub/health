@@ -26,6 +26,30 @@ export default function IndustriesServed() {
     }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.05
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: 'spring',
+        stiffness: 95,
+        damping: 14
+      }
+    }
+  };
+
   return (
     <section className="py-20 bg-[#F8FAFC] relative bg-grid-pattern text-left">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -44,37 +68,43 @@ export default function IndustriesServed() {
         </div>
 
         {/* Asymmetric Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-80px' }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+        >
           {industries.map((ind, idx) => {
             const Icon = ind.icon;
             return (
-              <motion.div
-                key={idx}
-                whileHover={{ y: -6, scale: 1.01 }}
-                className="p-8 rounded-3xl bg-white border border-[#DCFCE7] shadow-premium hover:shadow-premium-hover transition-all duration-300 flex flex-col justify-between group cursor-default"
-              >
-                <div className="space-y-4">
-                  {/* Icon */}
-                  <div className="w-12 h-12 rounded-2xl bg-[#F0FDF4] text-primary border border-[#DCFCE7] flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                    <Icon size={22} />
+              <motion.div key={idx} variants={cardVariants}>
+                <div
+                  className="p-8 rounded-3xl bg-white border border-[#DCFCE7] shadow-premium hover:shadow-premium-hover transition-all duration-300 flex flex-col justify-between group cursor-default h-full"
+                >
+                  <div className="space-y-4">
+                    {/* Icon */}
+                    <div className="w-12 h-12 rounded-2xl bg-[#F0FDF4] text-primary border border-[#DCFCE7] flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                      <Icon size={22} />
+                    </div>
+                    
+                    <h3 className="text-base font-bold text-[#0F172A] group-hover:text-primary transition-colors">
+                      {ind.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
+                      {ind.description}
+                    </p>
                   </div>
-                  
-                  <h3 className="text-base font-bold text-[#0F172A] group-hover:text-primary transition-colors">
-                    {ind.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
-                    {ind.description}
-                  </p>
-                </div>
 
-                <div className="mt-8 flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-[#475569]">
-                  <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
-                  SLA Active
+                  <div className="mt-8 flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-[#475569]">
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
+                    SLA Active
+                  </div>
                 </div>
               </motion.div>
             );
           })}
-        </div>
+        </motion.div>
 
       </div>
     </section>

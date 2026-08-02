@@ -81,6 +81,30 @@ export default function FeaturedCategories() {
     }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.05
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 35 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: 'spring',
+        stiffness: 90,
+        damping: 14
+      }
+    }
+  };
+
   return (
     <section className="py-20 bg-[#F8FAFC] relative bg-grid-pattern text-left">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -99,50 +123,57 @@ export default function FeaturedCategories() {
         </div>
 
         {/* Categories Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-80px' }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+        >
           {categoriesList.map((cat) => {
             const Icon = cat.icon;
             return (
-              <TiltCard
-                key={cat.id}
-                className="relative rounded-3xl border border-[#DCFCE7] bg-white p-8 sm:p-10 flex flex-col justify-between shadow-premium hover:shadow-premium-hover transition-all duration-300 group glow-overlay"
-              >
-                {/* Visual color corner */}
-                <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl ${cat.color} rounded-bl-full blur-2xl opacity-60 group-hover:scale-125 transition-transform duration-500`} />
+              <motion.div key={cat.id} variants={cardVariants}>
+                <TiltCard
+                  className="relative rounded-3xl border border-[#DCFCE7] bg-white p-8 sm:p-10 flex flex-col justify-between shadow-premium hover:shadow-premium-hover transition-all duration-300 group glow-overlay"
+                >
+                  {/* Visual color corner */}
+                  <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl ${cat.color} rounded-bl-full blur-2xl opacity-60 group-hover:scale-125 transition-transform duration-500`} />
 
-                <div style={{ transform: 'translateZ(30px)' }} className="transition-transform duration-300">
-                  {/* Category Badge & Icon */}
-                  <div className="flex justify-between items-start mb-6">
-                    <div className="w-12 h-12 rounded-2xl bg-[#F0FDF4] text-primary border border-[#DCFCE7] shadow-sm flex items-center justify-center">
-                      <Icon size={24} />
+                  <div style={{ transform: 'translateZ(30px)' }} className="transition-transform duration-300">
+                    {/* Category Badge & Icon */}
+                    <div className="flex justify-between items-start mb-6">
+                      <div className="w-12 h-12 rounded-2xl bg-[#F0FDF4] text-primary border border-[#DCFCE7] shadow-sm flex items-center justify-center">
+                        <Icon size={24} />
+                      </div>
+                      <span className="text-[10px] font-bold uppercase tracking-wider bg-[#F0FDF4] border border-[#DCFCE7] text-primary px-2.5 py-1 rounded-full">
+                        {cat.badge}
+                      </span>
                     </div>
-                    <span className="text-[10px] font-bold uppercase tracking-wider bg-[#F0FDF4] border border-[#DCFCE7] text-primary px-2.5 py-1 rounded-full">
-                      {cat.badge}
-                    </span>
+
+                    {/* Title & Description */}
+                    <h3 className="text-xl font-bold font-display text-[#0F172A] mb-3 font-sans">
+                      {cat.name}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-slate-500 leading-relaxed max-w-md">
+                      {cat.description}
+                    </p>
                   </div>
 
-                  {/* Title & Description */}
-                  <h3 className="text-xl font-bold font-display text-[#0F172A] mb-3 font-sans">
-                    {cat.name}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-slate-500 leading-relaxed max-w-md">
-                    {cat.description}
-                  </p>
-                </div>
-
-                <div style={{ transform: 'translateZ(15px)' }} className="mt-8 pt-6 border-t border-slate-100 w-full">
-                  <Link
-                    to={`/products?category=${cat.id}`}
-                    className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-primary hover:text-primary-hover transition-colors"
-                  >
-                    Browse Catalog
-                    <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                  </Link>
-                </div>
-              </TiltCard>
+                  <div style={{ transform: 'translateZ(15px)' }} className="mt-8 pt-6 border-t border-slate-100 w-full">
+                    <Link
+                      to={`/products?category=${cat.id}`}
+                      className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-primary hover:text-primary-hover transition-colors"
+                    >
+                      Browse Catalog
+                      <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    </Link>
+                  </div>
+                </TiltCard>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
 
       </div>
     </section>
