@@ -43,10 +43,10 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-slate-950 border-t border-slate-900 text-slate-400 relative overflow-hidden">
+    <footer className="bg-slate-950 border-t border-slate-900 text-slate-400 relative overflow-hidden text-left">
       {/* Background soft glows */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#0056D2]/5 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#00AEEF]/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#16A34A]/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#10B981]/5 rounded-full blur-[120px] pointer-events-none" />
 
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 relative z-10">
@@ -58,10 +58,10 @@ export default function Footer() {
                 <HeartPulse size={24} />
               </div>
               <div className="flex flex-col">
-                <span className="font-display font-extrabold text-xl tracking-tight text-white group-hover:text-accent transition-colors duration-300">
+                <span className="font-display font-extrabold text-xl tracking-tight text-white group-hover:text-primary transition-colors duration-300">
                   AETHERIS
                 </span>
-                <span className="text-[9px] font-bold tracking-widest text-[#00AEEF] uppercase -mt-1">
+                <span className="text-[9px] font-bold tracking-widest text-[#16A34A] uppercase -mt-1">
                   Medical Systems
                 </span>
               </div>

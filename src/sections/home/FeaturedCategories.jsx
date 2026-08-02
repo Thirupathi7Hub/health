@@ -52,7 +52,7 @@ export default function FeaturedCategories() {
       name: 'Diagnostic Imaging Systems',
       description: 'AI-guided 3.0T MRI systems, 128-slice CT scanners, and floor-mounted digital radiography.',
       icon: Eye,
-      color: 'from-[#3B82F6]/10 to-[#3B82F6]/20',
+      color: 'from-primary/10 to-primary/20',
       badge: 'Advanced AI Integrated'
     },
     {
@@ -60,7 +60,7 @@ export default function FeaturedCategories() {
       name: 'Critical Care Hardware',
       description: 'Lung-protective ICU ventilators, multiparameter patient monitors, and electronic gas anesthesia machines.',
       icon: Cpu,
-      color: 'from-[#22D3EE]/10 to-[#22D3EE]/20',
+      color: 'from-accent/10 to-accent/20',
       badge: '24/7 Ward Integration'
     },
     {
@@ -68,7 +68,7 @@ export default function FeaturedCategories() {
       name: 'Surgical Operating Solutions',
       description: 'Shadow-free LED lights with 4K recording, electro-hydraulic surgical tables, and electrosurgical generators.',
       icon: ShieldCheck,
-      color: 'from-[#38BDF8]/15 to-[#38BDF8]/25',
+      color: 'from-secondary/15 to-secondary/25',
       badge: 'OR Precision Standard'
     },
     {
@@ -76,24 +76,24 @@ export default function FeaturedCategories() {
       name: 'Clinical Infrastructure',
       description: 'Autonomous UV-C disinfection robots and medical gas pipeline networks NFPA 99 compliant.',
       icon: Database,
-      color: 'from-slate-800/10 to-slate-800/20',
+      color: 'from-slate-100 to-slate-200',
       badge: 'NFPA 99 Compliant'
     }
   ];
 
   return (
-    <section className="py-20 bg-[#030712] relative bg-grid-pattern text-left">
+    <section className="py-20 bg-[#F8FAFC] relative bg-grid-pattern text-left">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-primary/20 text-accent border border-primary/30">
+          <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-primary/10 text-primary border border-primary/20">
             Systems Portfolio
           </span>
-          <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-[#F8FAFC] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-[#0F172A] tracking-tight">
             Featured B2B Product Categories
           </h2>
-          <p className="text-sm sm:text-base text-[#CBD5E1]">
+          <p className="text-sm sm:text-base text-[#475569]">
             Hover to experience 3D diagnostic alignment. Click any division to view specifications.
           </p>
         </div>
@@ -105,7 +105,7 @@ export default function FeaturedCategories() {
             return (
               <TiltCard
                 key={cat.id}
-                className="relative rounded-3xl border border-[rgba(255,255,255,0.08)] bg-[#111827] p-8 sm:p-10 flex flex-col justify-between shadow-premium hover:shadow-premium-hover transition-all duration-300 group glow-overlay"
+                className="relative rounded-3xl border border-[#DCFCE7] bg-white p-8 sm:p-10 flex flex-col justify-between shadow-premium hover:shadow-premium-hover transition-all duration-300 group glow-overlay"
               >
                 {/* Visual color corner */}
                 <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl ${cat.color} rounded-bl-full blur-2xl opacity-60 group-hover:scale-125 transition-transform duration-500`} />
@@ -113,27 +113,27 @@ export default function FeaturedCategories() {
                 <div style={{ transform: 'translateZ(30px)' }} className="transition-transform duration-300">
                   {/* Category Badge & Icon */}
                   <div className="flex justify-between items-start mb-6">
-                    <div className="w-12 h-12 rounded-2xl bg-[#0F172A] text-accent border border-[rgba(255,255,255,0.08)] shadow-sm flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-2xl bg-[#F0FDF4] text-primary border border-[#DCFCE7] shadow-sm flex items-center justify-center">
                       <Icon size={24} />
                     </div>
-                    <span className="text-[10px] font-bold uppercase tracking-wider bg-[#0F172A] border border-[rgba(255,255,255,0.08)] text-[#F8FAFC] px-2.5 py-1 rounded-full">
+                    <span className="text-[10px] font-bold uppercase tracking-wider bg-[#F0FDF4] border border-[#DCFCE7] text-primary px-2.5 py-1 rounded-full">
                       {cat.badge}
                     </span>
                   </div>
 
                   {/* Title & Description */}
-                  <h3 className="text-xl font-bold font-display text-[#F8FAFC] mb-3 font-sans">
+                  <h3 className="text-xl font-bold font-display text-[#0F172A] mb-3 font-sans">
                     {cat.name}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-md">
+                  <p className="text-xs sm:text-sm text-slate-500 leading-relaxed max-w-md">
                     {cat.description}
                   </p>
                 </div>
 
-                <div style={{ transform: 'translateZ(15px)' }} className="mt-8 pt-6 border-t border-slate-800 w-full">
+                <div style={{ transform: 'translateZ(15px)' }} className="mt-8 pt-6 border-t border-slate-100 w-full">
                   <Link
                     to={`/products?category=${cat.id}`}
-                    className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-accent hover:text-white transition-colors"
+                    className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-primary hover:text-primary-hover transition-colors"
                   >
                     Browse Catalog
                     <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />

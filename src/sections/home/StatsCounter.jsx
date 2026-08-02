@@ -49,7 +49,7 @@ export default function StatsCounter() {
   ];
 
   return (
-    <section ref={ref} className="py-20 bg-[#0F172A] border-y border-[rgba(255,255,255,0.08)] text-white relative overflow-hidden bg-grid-pattern">
+    <section ref={ref} className="py-20 bg-[#F0FDF4] border-y border-[#DCFCE7] text-[#475569] relative overflow-hidden bg-grid-pattern text-left">
       {/* Background graphic elements */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent opacity-60 pointer-events-none" />
       <div className="absolute -top-40 -left-40 w-96 h-96 bg-accent/5 rounded-full blur-[100px] pointer-events-none" />
@@ -58,7 +58,7 @@ export default function StatsCounter() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {stats.map((stat, index) => (
             <div key={index} className="text-center space-y-2">
-              <div className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-accent font-display">
+              <div className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-primary font-display">
                 {isInView ? (
                   <SafeCountUp
                     end={stat.value}
@@ -69,7 +69,7 @@ export default function StatsCounter() {
                   <span>0{stat.suffix}</span>
                 )}
               </div>
-              <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#CBD5E1]">
+              <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#475569]">
                 {stat.label}
               </p>
             </div>

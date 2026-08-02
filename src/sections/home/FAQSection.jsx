@@ -25,15 +25,15 @@ export default function FAQSection() {
   ];
 
   return (
-    <section className="py-20 bg-[#030712] border-t border-[rgba(255,255,255,0.08)] relative bg-grid-pattern text-left">
+    <section className="py-20 bg-[#F8FAFC] border-t border-[#DCFCE7] relative bg-grid-pattern text-left">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center mb-16 space-y-4">
-          <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-primary/20 text-accent border border-primary/30">
+          <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-primary/10 text-primary border border-primary/20">
             Support Portal
           </span>
-          <h2 className="text-3xl font-display font-extrabold text-[#F8FAFC] tracking-tight">
+          <h2 className="text-3xl font-display font-extrabold text-[#0F172A] tracking-tight">
             Procurement FAQ & Licensing
           </h2>
         </div>
@@ -45,15 +45,15 @@ export default function FAQSection() {
             return (
               <div
                 key={index}
-                className="rounded-2xl border border-[rgba(255,255,255,0.08)] bg-[#111827] overflow-hidden shadow-premium transition-all duration-300"
+                className="rounded-2xl border border-[#DCFCE7] bg-white overflow-hidden shadow-premium transition-all duration-300"
               >
                 <button
                   onClick={() => setActiveIndex(isOpen ? null : index)}
-                  className="w-full px-6 py-5 flex items-center justify-between text-left gap-4 cursor-pointer hover:bg-slate-900/10 transition-colors"
+                  className="w-full px-6 py-5 flex items-center justify-between text-left gap-4 cursor-pointer hover:bg-slate-50/50 transition-colors"
                 >
                   <div className="flex items-center gap-3">
                     <HelpCircle size={18} className="text-primary flex-shrink-0" />
-                    <span className="text-sm sm:text-base font-bold text-[#F8FAFC]">{faq.question}</span>
+                    <span className="text-sm sm:text-base font-bold text-[#0F172A]">{faq.question}</span>
                   </div>
                   <ChevronDown
                     size={16}
@@ -69,7 +69,7 @@ export default function FAQSection() {
                       exit={{ height: 0 }}
                       transition={{ duration: 0.3, ease: 'easeInOut' }}
                     >
-                      <div className="px-6 pb-6 pt-2 border-t border-slate-800/80 text-xs sm:text-sm text-[#CBD5E1] leading-relaxed pl-11">
+                      <div className="px-6 pb-6 pt-2 border-t border-slate-100 text-xs sm:text-sm text-[#475569] leading-relaxed pl-11">
                         {faq.answer}
                       </div>
                     </motion.div>

@@ -37,7 +37,7 @@ export default function MainLayout({ children }) {
   };
 
   return (
-    <div className="min-h-screen bg-[#030712] flex flex-col relative text-[#F8FAFC] font-sans">
+    <div className="min-h-screen bg-[#F8FAFC] flex flex-col relative text-[#475569] font-sans">
       {/* Interactive mouse light trail aura */}
       <CursorTrail />
       

@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { Calendar, User, ArrowRight } from 'lucide-react';
 
 export default function InsightsFeed() {
@@ -35,15 +34,15 @@ export default function InsightsFeed() {
   ];
 
   return (
-    <section className="py-20 bg-[#030712] border-t border-[rgba(255,255,255,0.08)] relative bg-grid-pattern text-left">
+    <section className="py-20 bg-[#F8FAFC] border-t border-[#DCFCE7] relative bg-grid-pattern text-left">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-primary/20 text-accent border border-primary/30">
+          <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-primary/10 text-primary border border-primary/20">
             Insights Portal
           </span>
-          <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-[#F8FAFC] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-[#0F172A] tracking-tight">
             Latest Clinical & Engineering Whitepapers
           </h2>
         </div>
@@ -53,11 +52,11 @@ export default function InsightsFeed() {
           {posts.map((post) => (
             <article
               key={post.id}
-              className="group flex flex-col justify-between rounded-3xl bg-[#111827] border border-[rgba(255,255,255,0.08)] overflow-hidden shadow-premium hover:shadow-premium-hover transition-all duration-305 text-left"
+              className="group flex flex-col justify-between rounded-3xl bg-white border border-[#DCFCE7] overflow-hidden shadow-premium hover:shadow-premium-hover transition-all duration-305 text-left"
             >
               <div>
                 {/* Post Cover */}
-                <div className="relative h-48 overflow-hidden bg-slate-900">
+                <div className="relative h-48 overflow-hidden bg-slate-100">
                   <img
                     src={post.image}
                     alt={post.title}
@@ -67,7 +66,7 @@ export default function InsightsFeed() {
 
                 <div className="p-6 space-y-4">
                   {/* Meta */}
-                  <div className="flex items-center gap-4 text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                  <div className="flex items-center gap-4 text-[10px] font-bold text-slate-500 uppercase tracking-wider">
                     <span className="flex items-center gap-1">
                       <Calendar size={12} /> {post.date}
                     </span>
@@ -77,19 +76,19 @@ export default function InsightsFeed() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-base sm:text-lg font-bold text-[#F8FAFC] line-clamp-2 leading-snug group-hover:text-primary transition-colors duration-300">
+                  <h3 className="text-base sm:text-lg font-bold text-[#0F172A] line-clamp-2 leading-snug group-hover:text-primary transition-colors duration-300">
                     {post.title}
                   </h3>
                   
                   {/* Excerpt */}
-                  <p className="text-xs sm:text-sm text-slate-400 leading-relaxed line-clamp-3">
+                  <p className="text-xs sm:text-sm text-slate-500 leading-relaxed line-clamp-3">
                     {post.excerpt}
                   </p>
                 </div>
               </div>
 
               <div className="p-6 pt-0 mt-2">
-                <span className="inline-flex items-center gap-1.5 text-xs font-bold text-accent group-hover:text-white transition-colors cursor-pointer">
+                <span className="inline-flex items-center gap-1.5 text-xs font-bold text-primary group-hover:text-primary-hover transition-colors cursor-pointer">
                   Read Article Brief
                   <ArrowRight size={12} />
                 </span>

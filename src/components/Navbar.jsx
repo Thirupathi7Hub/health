@@ -40,7 +40,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 w-full z-40 transition-all duration-500 ${
         isScrolled
-          ? 'bg-slate-900/80 backdrop-blur-md border-b border-slate-800/40 py-4 shadow-lg'
+          ? 'bg-white/90 backdrop-blur-md border-b border-[#DCFCE7] py-4 shadow-lg'
           : 'bg-transparent py-6'
       }`}
     >
@@ -52,10 +52,10 @@ export default function Navbar() {
               <HeartPulse size={24} />
             </div>
             <div className="flex flex-col">
-              <span className="font-display font-extrabold text-xl tracking-tight text-white group-hover:text-accent transition-colors duration-300">
+              <span className="font-display font-extrabold text-xl tracking-tight text-[#0F172A] group-hover:text-primary transition-colors duration-300">
                 AETHERIS
               </span>
-              <span className="text-[9px] font-bold tracking-widest text-[#00AEEF] uppercase -mt-1">
+              <span className="text-[9px] font-bold tracking-widest text-[#16A34A] uppercase -mt-1">
                 Medical Systems
               </span>
             </div>
@@ -69,13 +69,13 @@ export default function Navbar() {
                 to={link.path}
                 className={`relative text-sm font-semibold tracking-wide transition-colors duration-300 py-1 ${
                   isActive(link.path)
-                    ? 'text-accent'
-                    : 'text-slate-300 hover:text-white'
+                    ? 'text-primary'
+                    : 'text-[#475569] hover:text-[#0F172A]'
                 }`}
               >
                 {link.name}
                 {isActive(link.path) && (
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-accent rounded-full" />
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary rounded-full" />
                 )}
               </Link>
             ))}
@@ -94,7 +94,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer"
+            className="md:hidden p-2 rounded-lg text-[#475569] hover:text-[#0F172A] hover:bg-slate-100 transition-colors cursor-pointer"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -105,14 +105,14 @@ export default function Navbar() {
       {/* Mobile Drawer Overlay */}
       {isMobileMenuOpen && (
         <div
-          className="fixed inset-0 top-[73px] bg-slate-950/80 backdrop-blur-sm z-30 md:hidden"
+          className="fixed inset-0 top-[73px] bg-slate-900/30 backdrop-blur-sm z-30 md:hidden"
           onClick={() => setIsMobileMenuOpen(false)}
         />
       )}
 
       {/* Mobile Menu Drawer */}
       <div
-        className={`fixed top-[73px] right-0 w-80 h-[calc(100vh-73px)] bg-slate-900 border-l border-slate-800 z-40 transform transition-transform duration-300 ease-in-out md:hidden flex flex-col justify-between ${
+        className={`fixed top-[73px] right-0 w-80 h-[calc(100vh-73px)] bg-white border-l border-[#DCFCE7] z-40 transform transition-transform duration-300 ease-in-out md:hidden flex flex-col justify-between ${
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
@@ -122,20 +122,20 @@ export default function Navbar() {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`flex items-center justify-between py-3 border-b border-slate-800/80 text-sm font-semibold tracking-wide ${
+                className={`flex items-center justify-between py-3 border-b border-slate-100 text-sm font-semibold tracking-wide ${
                   isActive(link.path)
-                    ? 'text-accent'
-                    : 'text-slate-300 hover:text-white'
+                    ? 'text-primary'
+                    : 'text-[#475569] hover:text-[#0F172A]'
                 }`}
               >
                 {link.name}
-                <ChevronRight size={16} className={isActive(link.path) ? 'text-accent' : 'text-slate-600'} />
+                <ChevronRight size={16} className={isActive(link.path) ? 'text-primary' : 'text-slate-400'} />
               </Link>
             ))}
           </div>
         </div>
 
-        <div className="p-6 border-t border-slate-800/80 bg-slate-950/40">
+        <div className="p-6 border-t border-slate-100 bg-slate-50">
           <button
             onClick={() => {
               setIsMobileMenuOpen(false);

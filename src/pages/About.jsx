@@ -59,7 +59,7 @@ export default function About() {
   return (
     <>
       <Helmet>
-        <title>About Our Corporate Legacy & Systems | Aetheris</title>
+        <title>About Our Legacy & Systems | Aetheris</title>
         <meta
           name="description"
           content="Learn about Aetheris Medical Systems. Our vision, leadership, ISO/FDA quality certifications, global logistics networks, and corporate historical milestones."
@@ -67,52 +67,52 @@ export default function About() {
         <link rel="canonical" href="https://aetheris-medical.com/about" />
       </Helmet>
 
-      <div className="bg-[#030712] min-h-screen text-[#F8FAFC]">
+      <div className="bg-[#F8FAFC] min-h-screen text-[#475569]">
         {/* Sub-page Hero */}
-        <section className="relative py-20 bg-[#0F172A] border-b border-[rgba(255,255,255,0.08)] overflow-hidden text-left bg-grid-pattern">
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900 to-primary/10 opacity-70" />
-          <div className="absolute top-1/4 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
+        <section className="relative py-20 bg-[#F0FDF4] border-b border-[#DCFCE7] overflow-hidden text-left bg-grid-pattern">
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-slate-50 to-primary/10 opacity-70" />
+          <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
           
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-4">
-            <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-primary/20 text-accent border border-primary/30">
+            <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-primary/10 text-primary border border-primary/20">
               Corporate Legacy
             </span>
-            <h1 className="text-3xl sm:text-5xl font-display font-extrabold tracking-tight">
+            <h1 className="text-3xl sm:text-5xl font-display font-extrabold tracking-tight text-[#0F172A]">
               Pioneering the Standards of Medical Engineering
             </h1>
-            <p className="text-sm sm:text-base text-[#CBD5E1] max-w-2xl leading-relaxed">
+            <p className="text-sm sm:text-base text-[#475569] max-w-2xl leading-relaxed">
               Serving global healthcare providers since 2012 by designing, supplying, and maintaining the systems that save lives.
             </p>
           </div>
         </section>
 
         {/* Company Story */}
-        <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left bg-[#030712]">
+        <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left bg-[#F8FAFC]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             
             {/* Story text */}
             <div className="lg:col-span-7 space-y-6">
-              <h2 className="text-2xl sm:text-3xl font-display font-extrabold text-[#F8FAFC]">
+              <h2 className="text-2xl sm:text-3xl font-display font-extrabold text-[#0F172A]">
                 Our Journey Towards Life-Saving Integrity
               </h2>
-              <p className="text-sm sm:text-base text-[#CBD5E1] leading-relaxed">
+              <p className="text-sm sm:text-base text-[#475569] leading-relaxed">
                 Aetheris Medical Systems was founded with a single premise: clinical safety should never be compromised by supply chain inefficiencies or subpar field engineering. What began as a regional specialized ICU ventilator supplier has grown into an international systems partner.
               </p>
-              <p className="text-sm sm:text-base text-[#CBD5E1] leading-relaxed">
+              <p className="text-sm sm:text-base text-[#475569] leading-relaxed">
                 Today, we supply whole diagnostic radiology systems, engineer lead-shielding boundaries, configure clinical DICOM database synchronizations, and keep hospital equipment online under stringent uptime contracts. We operate as an integrated technical partner for healthcare groups globally.
               </p>
 
               {/* Vision & Mission Cards */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
-                <div className="p-6 rounded-2xl bg-[#0F172A] border border-[rgba(255,255,255,0.08)] space-y-2 shadow-premium">
-                  <h3 className="text-sm font-bold uppercase tracking-wider text-accent">Our Mission</h3>
-                  <p className="text-xs text-slate-400 leading-relaxed">
+                <div className="p-6 rounded-2xl bg-white border border-[#DCFCE7] space-y-2 shadow-premium">
+                  <h3 className="text-sm font-bold uppercase tracking-wider text-primary">Our Mission</h3>
+                  <p className="text-xs text-slate-500 leading-relaxed">
                     To supply hospital systems with highly calibrated equipment, ensuring surgeons and physicians work with absolute diagnostic confidence.
                   </p>
                 </div>
-                <div className="p-6 rounded-2xl bg-[#111827] border border-[rgba(255,255,255,0.08)] space-y-2 shadow-premium">
-                  <h3 className="text-sm font-bold uppercase tracking-wider text-primary">Our Vision</h3>
-                  <p className="text-xs text-slate-400 leading-relaxed">
+                <div className="p-6 rounded-2xl bg-white border border-[#DCFCE7] space-y-2 shadow-premium">
+                  <h3 className="text-sm font-bold uppercase tracking-wider text-accent">Our Vision</h3>
+                  <p className="text-xs text-slate-500 leading-relaxed">
                     To be the leading global standard in B2B medical equipment supply, certified digital hospital layout engineering, and preventive SLAs.
                   </p>
                 </div>
@@ -122,7 +122,7 @@ export default function About() {
             {/* Graphic image */}
             <div className="lg:col-span-5 relative">
               <div className="absolute -inset-4 bg-gradient-to-tr from-primary/10 to-accent/15 rounded-3xl blur-xl opacity-60" />
-              <div className="relative rounded-3xl overflow-hidden border border-[rgba(255,255,255,0.08)] bg-[#0F172A] p-4 shadow-premium">
+              <div className="relative rounded-3xl overflow-hidden border border-[#DCFCE7] bg-white p-4 shadow-premium">
                 <img
                   src={operatingSuite}
                   alt="Operating Room Design Suite"
@@ -135,13 +135,13 @@ export default function About() {
         </section>
 
         {/* Corporate Values */}
-        <section className="py-20 bg-[#0F172A] border-y border-[rgba(255,255,255,0.08)] text-left bg-grid-pattern">
+        <section className="py-20 bg-white border-y border-[#DCFCE7] text-left bg-grid-pattern">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-              <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-primary/20 text-accent border border-primary/30">
+              <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-primary/10 text-primary border border-primary/20">
                 Ethical Pillars
               </span>
-              <h2 className="text-3xl font-display font-extrabold text-[#F8FAFC] tracking-tight">
+              <h2 className="text-3xl font-display font-extrabold text-[#0F172A] tracking-tight">
                 Our Core B2B Commitments
               </h2>
             </div>
@@ -150,12 +150,12 @@ export default function About() {
               {values.map((v, idx) => {
                 const Icon = v.icon;
                 return (
-                  <div key={idx} className="p-6 rounded-2xl bg-[#111827] border border-[rgba(255,255,255,0.08)] space-y-4 hover:bg-[#0F172A] transition-all">
-                    <div className="w-10 h-10 rounded-xl bg-primary/20 text-accent flex items-center justify-center">
+                  <div key={idx} className="p-6 rounded-2xl bg-slate-50 border border-[#DCFCE7] space-y-4 hover:bg-white transition-all shadow-sm">
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
                       <Icon size={20} />
                     </div>
-                    <h3 className="text-base font-bold text-[#F8FAFC]">{v.title}</h3>
-                    <p className="text-xs text-slate-400 leading-relaxed">{v.description}</p>
+                    <h3 className="text-base font-bold text-[#0F172A]">{v.title}</h3>
+                    <p className="text-xs text-slate-550 leading-relaxed">{v.description}</p>
                   </div>
                 );
               })}
@@ -164,12 +164,12 @@ export default function About() {
         </section>
 
         {/* Leadership */}
-        <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left bg-[#030712]">
+        <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left bg-[#F8FAFC]">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-primary/20 text-accent border border-primary/30">
+            <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-primary/10 text-primary border border-primary/20">
               Executive Board
             </span>
-            <h2 className="text-3xl font-display font-extrabold text-[#F8FAFC] tracking-tight">
+            <h2 className="text-3xl font-display font-extrabold text-[#0F172A] tracking-tight">
               Clinical & Engineering Leadership
             </h2>
           </div>
@@ -178,10 +178,10 @@ export default function About() {
             {leaders.map((l, idx) => (
               <div
                 key={idx}
-                className="group rounded-3xl bg-[#111827] border border-[rgba(255,255,255,0.08)] overflow-hidden shadow-premium hover:shadow-premium-hover transition-all duration-300 flex flex-col justify-between"
+                className="group rounded-3xl bg-white border border-[#DCFCE7] overflow-hidden shadow-premium hover:shadow-premium-hover transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
-                  <div className="h-64 overflow-hidden bg-slate-900 relative">
+                  <div className="h-64 overflow-hidden bg-slate-100 relative">
                     <img
                       src={l.image}
                       alt={l.name}
@@ -189,9 +189,9 @@ export default function About() {
                     />
                   </div>
                   <div className="p-6 space-y-2">
-                    <h3 className="text-lg font-bold text-[#F8FAFC] group-hover:text-primary transition-colors">{l.name}</h3>
-                    <p className="text-xs font-extrabold text-accent uppercase tracking-wider">{l.role}</p>
-                    <p className="text-xs text-slate-405 leading-relaxed pt-2 border-t border-slate-800">{l.bio}</p>
+                    <h3 className="text-lg font-bold text-[#0F172A] group-hover:text-primary transition-colors">{l.name}</h3>
+                    <p className="text-xs font-extrabold text-primary uppercase tracking-wider">{l.role}</p>
+                    <p className="text-xs text-slate-500 leading-relaxed pt-2 border-t border-slate-100">{l.bio}</p>
                   </div>
                 </div>
               </div>
@@ -200,25 +200,25 @@ export default function About() {
         </section>
 
         {/* Certifications and Compliance */}
-        <section className="py-20 bg-[#0F172A] border-y border-[rgba(255,255,255,0.08)] text-left bg-grid-pattern">
+        <section className="py-20 bg-[#F0FDF4] border-y border-[#DCFCE7] text-left bg-grid-pattern">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               
               <div className="lg:col-span-5 space-y-6">
-                <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-primary/20 text-accent border border-primary/30">
+                <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-primary/10 text-primary border border-primary/20">
                   Compliance Registries
                 </span>
-                <h2 className="text-3xl font-display font-extrabold tracking-tight text-[#F8FAFC] leading-tight">
+                <h2 className="text-3xl font-display font-extrabold tracking-tight text-[#0F172A] leading-tight">
                   Global Quality Auditing & Registries
                 </h2>
-                <p className="text-xs sm:text-sm text-[#CBD5E1] leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#475569] leading-relaxed">
                   We verify calibration accuracy using standards traceable to national laboratories, ensuring every X-ray beam, anesthesia gas mixer, and ICU ventilator meets ISO metrics before handover.
                 </p>
                 <div className="flex gap-4">
-                  <div className="px-3 py-1 rounded bg-[#111827] border border-[rgba(255,255,255,0.08)] text-[10px] font-bold">
+                  <div className="px-3 py-1 rounded bg-white border border-[#DCFCE7] text-[10px] font-bold text-[#0F172A] shadow-sm">
                     ISO 13485 CERTIFIED
                   </div>
-                  <div className="px-3 py-1 rounded bg-[#111827] border border-[rgba(255,255,255,0.08)] text-[10px] font-bold">
+                  <div className="px-3 py-1 rounded bg-white border border-[#DCFCE7] text-[10px] font-bold text-[#0F172A] shadow-sm">
                     FDA 510(K) COMPLIANT
                   </div>
                 </div>
@@ -226,13 +226,13 @@ export default function About() {
 
               <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {certifications.map((c, idx) => (
-                  <div key={idx} className="p-6 rounded-2xl bg-[#111827] border border-[rgba(255,255,255,0.08)] space-y-2 shadow-sm">
+                  <div key={idx} className="p-6 rounded-2xl bg-white border border-[#DCFCE7] space-y-2 shadow-premium">
                     <div className="flex justify-between items-start">
-                      <h3 className="text-base font-bold text-accent">{c.name}</h3>
-                      <CheckCircle2 size={16} className="text-green-400" />
+                      <h3 className="text-base font-bold text-primary">{c.name}</h3>
+                      <CheckCircle2 size={16} className="text-green-600" />
                     </div>
-                    <p className="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest leading-none">Issuer: {c.issuer}</p>
-                    <p className="text-xs text-slate-400 leading-relaxed mt-2">{c.desc}</p>
+                    <p className="text-[10px] font-extrabold text-[#64748B] uppercase tracking-widest leading-none">Issuer: {c.issuer}</p>
+                    <p className="text-xs text-slate-500 leading-relaxed mt-2">{c.desc}</p>
                   </div>
                 ))}
               </div>
@@ -242,60 +242,60 @@ export default function About() {
         </section>
 
         {/* Global Presence Map block */}
-        <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left bg-[#030712]">
+        <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left bg-[#F8FAFC]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             <div className="lg:col-span-6 space-y-6">
-              <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-primary/20 text-accent border border-primary/30">
+              <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-primary/10 text-primary border border-primary/20">
                 Logistics Footprint
               </span>
-              <h2 className="text-3xl font-display font-extrabold text-[#F8FAFC] tracking-tight">
+              <h2 className="text-3xl font-display font-extrabold text-[#0F172A] tracking-tight">
                 Global Operations Network
               </h2>
-              <p className="text-sm text-[#CBD5E1] leading-relaxed">
+              <p className="text-sm text-[#475569] leading-relaxed">
                 With regional logistics centers and parts depots located near international air freight corridors, we support clinical clients quickly.
               </p>
               
               <div className="space-y-4">
-                <div className="flex gap-4 p-4 rounded-xl bg-[#111827] border border-[rgba(255,255,255,0.08)]">
-                  <div className="p-2 rounded-lg bg-primary/20 text-accent flex items-center justify-center h-10 w-10">
+                <div className="flex gap-4 p-4 rounded-xl bg-white border border-[#DCFCE7] shadow-sm">
+                  <div className="p-2 rounded-lg bg-primary/10 text-primary flex items-center justify-center h-10 w-10">
                     <MapPin size={20} />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-[#F8FAFC]">North American Depot & HQ</h4>
-                    <p className="text-xs text-slate-400 mt-0.5">East Coast Logistics Hub, Baltimore, MD</p>
+                    <h4 className="text-sm font-bold text-[#0F172A]">North American Depot & HQ</h4>
+                    <p className="text-xs text-slate-500 mt-0.5">East Coast Logistics Hub, Baltimore, MD</p>
                   </div>
                 </div>
 
-                <div className="flex gap-4 p-4 rounded-xl bg-[#111827] border border-[rgba(255,255,255,0.08)]">
-                  <div className="p-2 rounded-lg bg-primary/20 text-accent flex items-center justify-center h-10 w-10">
+                <div className="flex gap-4 p-4 rounded-xl bg-white border border-[#DCFCE7] shadow-sm">
+                  <div className="p-2 rounded-lg bg-primary/10 text-primary flex items-center justify-center h-10 w-10">
                     <MapPin size={20} />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-[#F8FAFC]">European Logistics Center</h4>
-                    <p className="text-xs text-slate-400 mt-0.5">Rotterdam Port Industrial Corridor, Netherlands</p>
+                    <h4 className="text-sm font-bold text-[#0F172A]">European Logistics Center</h4>
+                    <p className="text-xs text-slate-500 mt-0.5">Rotterdam Port Industrial Corridor, Netherlands</p>
                   </div>
                 </div>
 
-                <div className="flex gap-4 p-4 rounded-xl bg-[#111827] border border-[rgba(255,255,255,0.08)]">
-                  <div className="p-2 rounded-lg bg-primary/20 text-accent flex items-center justify-center h-10 w-10">
+                <div className="flex gap-4 p-4 rounded-xl bg-white border border-[#DCFCE7] shadow-sm">
+                  <div className="p-2 rounded-lg bg-primary/10 text-primary flex items-center justify-center h-10 w-10">
                     <MapPin size={20} />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-[#F8FAFC]">Asia-Pacific Service Hub</h4>
-                    <p className="text-xs text-slate-400 mt-0.5">Changi Aero-depot Complex, Singapore</p>
+                    <h4 className="text-sm font-bold text-[#0F172A]">Asia-Pacific Service Hub</h4>
+                    <p className="text-xs text-slate-500 mt-0.5">Changi Aero-depot Complex, Singapore</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="lg:col-span-6 h-[380px] rounded-3xl bg-[#0F172A] border border-[rgba(255,255,255,0.08)] shadow-premium relative flex items-center justify-center overflow-hidden p-6">
+            <div className="lg:col-span-6 h-[380px] rounded-3xl bg-[#F0FDF4] border border-[#DCFCE7] shadow-premium relative flex items-center justify-center overflow-hidden p-6">
               {/* Mesh background glow */}
               <div className="absolute w-80 h-80 bg-primary/10 rounded-full blur-[80px] pointer-events-none" />
               <div className="relative text-center space-y-4 z-10 max-w-sm">
-                <Globe size={48} className="text-accent mx-auto floating-element" />
-                <h3 className="text-lg font-bold text-white">Interactive Network Footprint</h3>
-                <p className="text-xs text-[#CBD5E1] leading-relaxed">
+                <Globe size={48} className="text-primary mx-auto floating-element" />
+                <h3 className="text-lg font-bold text-[#0F172A]">Interactive Network Footprint</h3>
+                <p className="text-xs text-[#475569] leading-relaxed">
                   Supplying equipment, routing pipelines, and maintaining system calibrations in hospitals across 42 countries worldwide.
                 </p>
               </div>

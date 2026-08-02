@@ -27,18 +27,18 @@ export default function SuccessStories() {
   ];
 
   return (
-    <section className="py-20 bg-[#030712] relative overflow-hidden bg-grid-pattern text-left">
+    <section className="py-20 bg-[#F8FAFC] relative overflow-hidden bg-grid-pattern text-left">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-primary/20 text-accent border border-primary/30">
+          <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-primary/10 text-primary border border-primary/20">
             Case Studies
           </span>
-          <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-[#F8FAFC] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-[#0F172A] tracking-tight">
             Clinical Deployment Case Studies
           </h2>
-          <p className="text-sm sm:text-base text-[#CBD5E1]">
+          <p className="text-sm sm:text-base text-[#475569]">
             Read about our major equipment supply and infrastructure integrations across leading networks.
           </p>
         </div>
@@ -50,28 +50,28 @@ export default function SuccessStories() {
             return (
               <div
                 key={index}
-                className="p-8 rounded-3xl bg-[#111827] border border-[rgba(255,255,255,0.08)] shadow-premium hover:shadow-premium-hover transition-all duration-300 text-left flex flex-col justify-between"
+                className="p-8 rounded-3xl bg-white border border-[#DCFCE7] shadow-premium hover:shadow-premium-hover transition-all duration-300 text-left flex flex-col justify-between"
               >
                 <div className="space-y-4">
                   {/* Badge */}
-                  <div className="w-10 h-10 rounded-xl bg-[#0F172A] text-accent border border-[rgba(255,255,255,0.08)] flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-xl bg-[#F0FDF4] text-primary border border-[#DCFCE7] flex items-center justify-center">
                     <Icon size={20} />
                   </div>
                   <div>
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#22D3EE] block mb-1">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-primary block mb-1">
                       {story.project}
                     </span>
-                    <h3 className="text-lg font-bold text-[#F8FAFC]">
+                    <h3 className="text-lg font-bold text-[#0F172A]">
                       {story.institution}
                     </h3>
                   </div>
-                  <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
                     {story.detail}
                   </p>
                 </div>
 
-                <div className="mt-8 pt-6 border-t border-slate-800">
-                  <span className="text-xs font-semibold uppercase tracking-wider text-[#CBD5E1]">Project Outcome</span>
+                <div className="mt-8 pt-6 border-t border-slate-100">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-[#475569]">Project Outcome</span>
                   <p className="text-lg font-extrabold text-primary font-display mt-0.5">{story.metric}</p>
                 </div>
               </div>
