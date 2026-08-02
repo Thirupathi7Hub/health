@@ -27,24 +27,34 @@ export default function FAQSection() {
   return (
     <section className="py-20 bg-[#F8FAFC] border-t border-[#DCFCE7] relative bg-grid-pattern text-left">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Header */}
-        <div className="text-center mb-16 space-y-4">
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="text-center mb-16 space-y-4"
+        >
           <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-primary/10 text-primary border border-primary/20">
             Support Portal
           </span>
           <h2 className="text-3xl font-display font-extrabold text-[#0F172A] tracking-tight">
             Procurement FAQ & Licensing
           </h2>
-        </div>
+        </motion.div>
 
-        {/* Accordions */}
+        {/* Staggered Accordions */}
         <div className="space-y-4">
           {faqs.map((faq, index) => {
             const isOpen = activeIndex === index;
             return (
-              <div
+              <motion.div
                 key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-20px' }}
+                transition={{ duration: 0.5, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
                 className="rounded-2xl border border-[#DCFCE7] bg-white overflow-hidden shadow-premium transition-all duration-300"
               >
                 <button
@@ -57,7 +67,7 @@ export default function FAQSection() {
                   </div>
                   <ChevronDown
                     size={16}
-                    className={`text-slate-400 transform transition-transform duration-300 ${isOpen ? 'rotate-180 text-primary' : ''}`}
+                    className={`text-slate-400 transform transition-transform duration-300 flex-shrink-0 ${isOpen ? 'rotate-180 text-primary' : ''}`}
                   />
                 </button>
 
@@ -75,7 +85,7 @@ export default function FAQSection() {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </div>
+              </motion.div>
             );
           })}
         </div>

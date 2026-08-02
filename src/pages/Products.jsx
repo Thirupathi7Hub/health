@@ -70,7 +70,12 @@ export default function Products() {
         {/* Header Section */}
         <section className="py-12 bg-[#F0FDF4] border-b border-[#DCFCE7] relative bg-grid-pattern">
           <div className="absolute inset-0 bg-gradient-to-r from-white via-slate-50 to-primary/10 opacity-70" />
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-4">
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-4"
+          >
             <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-primary/10 text-primary border border-primary/20">
               Procurement Center
             </span>
@@ -80,7 +85,7 @@ export default function Products() {
             <p className="text-sm text-[#475569] max-w-xl">
               Browse professional Diagnostic Imaging, Critical Care hardware, Surgical Solutions, and facility Infrastructure.
             </p>
-          </div>
+          </motion.div>
         </section>
 
         {/* Catalog Main Frame */}
@@ -88,11 +93,17 @@ export default function Products() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             
             {/* Left Sidebar: Filter categories */}
-            <div className="lg:col-span-3 lg:sticky lg:top-[93px] self-start space-y-6">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:col-span-3 lg:sticky lg:top-[93px] self-start space-y-6"
+            >
               <div className="p-6 bg-white border border-[#DCFCE7] rounded-3xl shadow-premium">
                 <h3 className="text-xs font-bold uppercase tracking-wider text-primary mb-4 flex items-center gap-2">
                   <Filter size={14} /> Divisions
                 </h3>
+
                 <div className="flex flex-col gap-1.5">
                   <button
                     onClick={() => handleCategorySelect('all')}
@@ -119,10 +130,15 @@ export default function Products() {
                   ))}
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Right Catalog: Search and Products Grid */}
-            <div className="lg:col-span-9 space-y-6">
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:col-span-9 space-y-6"
+            >
               {/* Search Bar */}
               <div className="relative">
                 <Search className="absolute left-4 top-3.5 text-slate-400" size={18} />
@@ -145,9 +161,13 @@ export default function Products() {
               {/* Products Grid */}
               {filteredProducts.length > 0 ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {filteredProducts.map((product) => (
-                    <div
+                  {filteredProducts.map((product, idx) => (
+                    <motion.div
                       key={product.id}
+                      initial={{ opacity: 0, y: 25 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: '-30px' }}
+                      transition={{ duration: 0.5, delay: idx * 0.07, ease: [0.16, 1, 0.3, 1] }}
                       onClick={() => setSelectedProduct(product)}
                       className="group flex flex-col justify-between rounded-3xl bg-white border border-[#DCFCE7] overflow-hidden shadow-premium hover:shadow-premium-hover transition-all duration-300 cursor-pointer"
                     >
@@ -181,7 +201,7 @@ export default function Products() {
                         </span>
                         <ChevronRight size={16} className="text-slate-400 group-hover:translate-x-1 transition-transform" />
                       </div>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
               ) : (
@@ -198,7 +218,7 @@ export default function Products() {
                   </button>
                 </div>
               )}
-            </div>
+            </motion.div>
 
           </div>
         </div>

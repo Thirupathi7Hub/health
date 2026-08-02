@@ -4,6 +4,27 @@ import { motion } from 'framer-motion';
 import { Shield, Users, Globe, ArrowRight } from 'lucide-react';
 import operatingSuite from '../../assets/operating_suite.png';
 
+const fadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: '-40px' },
+  transition: { duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] }
+});
+
+const fadeLeft = (delay = 0) => ({
+  initial: { opacity: 0, x: -40 },
+  whileInView: { opacity: 1, x: 0 },
+  viewport: { once: true, margin: '-40px' },
+  transition: { duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }
+});
+
+const fadeRight = (delay = 0) => ({
+  initial: { opacity: 0, x: 40 },
+  whileInView: { opacity: 1, x: 0 },
+  viewport: { once: true, margin: '-40px' },
+  transition: { duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }
+});
+
 export default function AboutPreview() {
   const highlights = [
     {
@@ -30,12 +51,10 @@ export default function AboutPreview() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-left">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           
-          {/* Left Column: Image with layered visual depth */}
-          <div className="lg:col-span-5 order-2 lg:order-1">
+          {/* Left Column: Image */}
+          <motion.div {...fadeLeft(0.1)} className="lg:col-span-5 order-2 lg:order-1">
             <div className="relative">
-              {/* Decorative gradient backing */}
               <div className="absolute -inset-4 bg-gradient-to-br from-primary/10 to-accent/15 rounded-3xl blur-xl opacity-40 transform -rotate-2" />
-              
               <div className="relative rounded-3xl overflow-hidden border border-[#DCFCE7] bg-white p-4 shadow-premium">
                 <img
                   src={operatingSuite}
@@ -43,18 +62,19 @@ export default function AboutPreview() {
                   className="w-full h-auto object-cover rounded-2xl"
                 />
               </div>
-
-              {/* Overlapping overlay card */}
-              <div className="absolute -bottom-6 -right-6 p-6 rounded-2xl bg-white border border-[#DCFCE7] shadow-premium max-w-[200px] text-left hidden sm:block">
+              <motion.div
+                {...fadeUp(0.4)}
+                className="absolute -bottom-6 -right-6 p-6 rounded-2xl bg-white border border-[#DCFCE7] shadow-premium max-w-[200px] text-left hidden sm:block"
+              >
                 <p className="text-3xl font-extrabold text-primary">14+</p>
                 <p className="text-xs font-bold text-[#0F172A] uppercase tracking-wider mt-1">Years Medical Excellence</p>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Right Column: Narrative Content */}
+          {/* Right Column: Content */}
           <div className="lg:col-span-7 space-y-8 order-1 lg:order-2">
-            <div className="space-y-4">
+            <motion.div {...fadeRight(0)} className="space-y-4">
               <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-primary/10 text-primary border border-primary/20">
                 Who We Are
               </span>
@@ -64,25 +84,29 @@ export default function AboutPreview() {
               <p className="text-sm sm:text-base text-[#475569] leading-relaxed">
                 Founded in 2012, Aetheris has evolved from a regional device supplier to a global medical systems partner. We coordinate procurement, calibrate imaging systems, and engineer gas manifolds for premier hospital organizations.
               </p>
-            </div>
+            </motion.div>
 
-            {/* Grid of Highlights */}
+            {/* Staggered Highlights Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               {highlights.map((item, index) => {
                 const Icon = item.icon;
                 return (
-                  <div key={index} className="space-y-3 p-5 rounded-2xl bg-white border border-[#DCFCE7] shadow-premium">
+                  <motion.div
+                    key={index}
+                    {...fadeUp(0.15 + index * 0.12)}
+                    className="space-y-3 p-5 rounded-2xl bg-white border border-[#DCFCE7] shadow-premium"
+                  >
                     <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
                       <Icon size={20} />
                     </div>
                     <h3 className="text-sm font-bold text-[#0F172A]">{item.title}</h3>
                     <p className="text-xs text-slate-500 leading-relaxed">{item.description}</p>
-                  </div>
+                  </motion.div>
                 );
               })}
             </div>
 
-            <div className="pt-4">
+            <motion.div {...fadeUp(0.5)} className="pt-4">
               <Link
                 to="/about"
                 className="inline-flex items-center gap-2 text-sm font-bold text-primary hover:text-primary-hover transition-colors group"
@@ -90,7 +114,7 @@ export default function AboutPreview() {
                 Read Our Corporate Journey
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </Link>
-            </div>
+            </motion.div>
           </div>
 
         </div>
