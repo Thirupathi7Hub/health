@@ -5,7 +5,6 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import QuoteModal from '../components/QuoteModal';
 import CursorTrail from '../components/CursorTrail';
-import SmoothScroll from '../components/SmoothScroll';
 
 export default function MainLayout({ children }) {
   const { pathname } = useLocation();
@@ -42,28 +41,25 @@ export default function MainLayout({ children }) {
       {/* Interactive mouse light trail aura */}
       <CursorTrail />
       
-      {/* Viewport locked elements */}
       <Navbar />
-      <QuoteModal />
 
-      {/* Smooth momentum scroll container */}
-      <SmoothScroll>
-        <div className="pt-[73px] flex-grow flex flex-col">
-          <AnimatePresence mode="wait">
-            <motion.main
-              key={pathname}
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              variants={pageVariants}
-              className="flex-grow"
-            >
-              {children}
-            </motion.main>
-          </AnimatePresence>
-        </div>
-        <Footer />
-      </SmoothScroll>
+      <AnimatePresence mode="wait">
+        <motion.main
+          key={pathname}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          variants={pageVariants}
+          className="flex-grow pt-[73px]" // Offset for sticky navbar
+        >
+          {children}
+        </motion.main>
+      </AnimatePresence>
+
+      <Footer />
+      
+      {/* Global B2B Request Quote Portal */}
+      <QuoteModal />
     </div>
   );
 }

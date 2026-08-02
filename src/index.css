@@ -27,6 +27,9 @@
 
 /* Custom styles for Emerald Green Light Clinical theme */
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-[#F8FAFC] text-[#475569] font-sans antialiased overflow-x-hidden;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
